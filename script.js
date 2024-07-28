@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-    function saveTasks() {
+    function loadTasks() {
         localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         removeButton.onclick = () => {
             taskList.removeChild(listItem);
             tasks = tasks.filter(task => task !== taskText);
-            saveTasks();
+            loadTasks();
         };
 
         listItem.appendChild(removeButton);
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         tasks.push(taskText);
-        saveTasks();
+        loadTasks();
 
         addTaskToDOM(taskText);
         taskInput.value = ""; // Clear the input field
