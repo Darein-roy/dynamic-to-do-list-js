@@ -1,0 +1,1 @@
+This is a dynamic to do list that allows the user to add and remove tasks.
